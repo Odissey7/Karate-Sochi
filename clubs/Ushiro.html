@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/gerb.jpeg">
+    <link rel="shortcut icon" href="../img/gerb.jpg">
     <link rel="stylesheet" href="../style/style.css">
     <title>Karate Sochi</title>
 </head>
 <body class="body">
     <video autoplay muted loop preload="auto" class="full_screen_video">
-        <source type="video/mp4" src="./img/background.mp4">
-        <source type="video/webm" src="./img/background2.webm">
+        <source type="video/mp4" src="../img/background.mp4">
     </video>
     <header class="header">
         <nav class="nav">
-            <p class="title_text">Федерация карате города сочи</p>
+            <a href="../index.html" class="title_text">Федерация карате города сочи 🏝️</a>
+            <div class="burger_wrap">
+                <div class="burger">
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="burger_content">
+                <div class="content_wrap">
+                    <a class="nav_link nav_link_burger nav_link_burger_big" href="../index.html">Главная</a>
+                    <a class="nav_link nav_link_burger" href="../club.html">Клубы</a>
+                    <a class="nav_link nav_link_burger" href="https://ruswkf.ru/sorevnovaniya/">Предстоящие события</a>
+                    <!-- <a class="nav_link nav_link_burger" href="../event.html" >Предстоящие события</a> -->
+                    <a class="nav_link nav_link_burger" href="../medals.html">Итоги соревнований</a>
+                    <a class="nav_link nav_link_burger" href="../partners.html">Партнеры</a>
+                </div>
+            </div>
+
             <ul class="navigation">
                 <li class="navigation_item"><a class="nav_link" href="../club.html">Клубы</a></li>
                 <li class="navigation_item"><a class="nav_link" href="../event.html">Предстоящие события</a></li>
@@ -25,7 +41,52 @@
         </nav>
     </header>
 
+    <main class="main_coashs ">
+        <div class="about_all_Teams ">
+            <div class="all_wrapps ">
+                <h1 class="all_about ">Андреев Артем Артурович</h1>
+                <img class="all_clubs_photo " src="#" alt="">
+            </div>
+            <div class="all_wheare ">
+                <div class="all_adress ">
+                    <p class="all_streat ">улица Гагарирна 72а</p>
+                    <p class="all_number"><a class="all_telephon" href="tel:89189090728"> 📞  +7-918-909-07-28</a></p>
+                </div>
+                <!-- <div class="all_box_sociall ">
+                    <a class="all_social_href " href="https://instagram.com/_klub_lider_?igshid=MTNiYzNiMzkwZA==">
+                        <img class="img_insta" src="../img/insta.svg" alt="">
+                        <p class="all_insta  worlds_run">_klub_lider_</p>
+                    </a>
+                </div> -->
+                <div class="all_wins ">
+                    <p class="all_medals ">Чёрный пояс 2-й Дан каратэ WKF 🥋</p>
+                    <p class="all_medals ">Высшее спортивное образование 📚 🎓</p>
+                    <p class="all_medals ">Мастер спорта России по традиционному каратэ 🥇</p>
+                    <p class="all_medals ">Мастер спорта России по рукопашному бою 🥇</p>
+                    <p class="all_medals ">Тренер Высшей категории</p>
+                    <p class="all_medals ">Судья ( Рефери) Всероссийской категории</p>
+                </div>
+            </div>
+        </div>
 
-<script src="./js/index.js"></script>
+        <div class="students_wrapp">
+            <div class="students_list">
+                <h3 class="students_title">Ученики 🔥</h3>
+                <ul class="students_wins_cards">
+                    <!-- <li class="student_card">
+                        <div class="students_card_wrapper">
+                            <img class="students_image" src="../img/saveli.jpg" alt="">
+                            <div class="about_students_wrapp">
+                                <span class="name_students">Верле Савелий</span>
+                                <span class="about_students">КМС</span>
+                            </div>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+<script src="../js/index.js"></script>
 </body>
 </html>
