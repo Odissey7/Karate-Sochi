@@ -8,7 +8,7 @@ html {
     text-align: center;
     display: flex;
     flex-direction: column;
-    background-color: #000000;
+    background-color: #000;
     margin: 0;
     position: relative;
     z-index: 30;
@@ -195,14 +195,21 @@ li {
 
 @media (max-width:910px) {
 
+    .body {
+        background-color: #eae4e4;
+    }
+
     .full_screen_video {
         display: none;
     }
 
     .bacground_hidden {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
         display: flex;
         position: fixed;
-        object-position: -200px 35px;
+        object-position: center 100px;
         z-index: -1;
     }
 }
@@ -385,6 +392,17 @@ li {
 .main_title {
     color: #fff;
     font-size: 50px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+@media (max-width:910px) {
+    .main_title {
+        width: 250px;
+        border-radius: 20px;
+        padding: 10px;
+        background-color: #b2a4a4;
+    }
 }
 
 .coach {
@@ -895,6 +913,48 @@ li {
 
 /* Scorpion */
 
+.scorpion_Bac {
+    height: 100%;
+    width: 100%;
+    background: url('../img/scorpionBac.jpg') no-repeat;
+    background-size: cover;
+    position: fixed;
+    /* background-attachment: fixed; */
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* 
+.scorpion_Bac {
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    object-position: 0 -200px;
+    object-fit: cover;
+    display: none;
+    position: fixed;
+    z-index: -3;
+}
+
+@media (max-width:650px) {
+    .scorpion_Bac {
+        object-position: 0 -100px;
+    }
+}
+
+@media (max-width:570px) {
+    .scorpion_Bac {
+        object-position: 0 30px;
+    }
+}
+
+@media (max-width:450px) {
+    .scorpion_Bac {
+        object-position: 0 80px;
+    }
+} */
+
 .students_title {
     text-align: center;
     font-size: 40px;
@@ -917,8 +977,17 @@ li {
         grid-template-rows: repeat(3, 1fr);
     }
 }
+@media (min-width:910px) {
+    .scorpion_Bac {
+        display: none;
+    }
+}
 
 @media (max-width:910px) {
+    .scorpion_Bac {
+        display: flex;
+    }
+
     .students_wins_cards {
         grid-template-columns: repeat(3, minmax(100px, 1fr));
         grid-template-rows: repeat(4, 1fr);
@@ -935,7 +1004,7 @@ li {
 }
 
 .students_image {
-    object-position: 0 -25px;
+    object-position: 0 0;
     object-fit: cover;
     width: 220px;
     height: 250px;
@@ -1033,7 +1102,7 @@ li {
     border-radius: 20px;
     background: transparent;
     backdrop-filter: blur(10px);
-    width: 45%;
+    width: 42%;
 }
 
 .sportsmens_img {
@@ -1067,7 +1136,7 @@ li {
 
 .medals910_wrapp {
     width: 100%;
-    /* top: -120px; */
+    top: 70px;
     object-fit: cover;
     position: fixed;
     z-index: -1;
@@ -1086,6 +1155,10 @@ li {
     .competitions_box {
         color: #fff;
         background-color: #808080be;
+    }
+
+    .sportsmens_kards {
+        background-color: #ffffffc7;
     }
 }
 
