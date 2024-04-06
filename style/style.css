@@ -218,6 +218,7 @@ li {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        opacity: 0.5;
         display: flex;
         position: fixed;
         object-position: center 100px;
@@ -298,12 +299,13 @@ li {
     list-style-type: none;
     text-decoration: none;
     text-align: center;
-    width: 18%;
     /* background-color: #ffffff00; */
 }
 
 .navigation_item-head {
-    background-color: #ff0000af;
+    /* width: 18%; */
+    color: #ff0000;
+    /* background-color: #ff0000af; */
 }
 
 .navigation_item:hover {
@@ -324,11 +326,26 @@ li {
     list-style-type: none;
     transition: all 0.3s linear;
     box-shadow: none;
+    position: relative;
+    transition: all 0.4s linear;
 }
 
-.nav_link:hover {
-    transition: all 0.3s linear;
-    box-shadow: 0px 0px 10px 3px #ff0000;
+.nav_link::after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 10px;
+    background-color: #ff9500;
+    transition: all 0.4s linear;
+    border-radius: 20px;
+    scale: 0;
+}
+
+.navigation_item:hover .nav_link::after {
+    transition: all 0.4s linear;
+    scale: 1;
+    width: 100%;
 }
 
 .burger_content {
@@ -340,7 +357,7 @@ li {
 }
 
 .nav_link_burger {
-    width: 40%;
+    width: fit-content;
     max-height: 13%;
     padding: 10px;
     margin: 20px auto;
@@ -367,15 +384,17 @@ li {
 
 
 .main {
-    margin: 0 15px;
     margin-top: 200px;
     text-align: center;
     position: relative;
     z-index: 40;
-    border-radius: 30px;
     /* background-color: #ffffffbb; */
     /* min-height: 1100px; */
 }
+
+/* .main_wrapper {
+    margin: 0 15px;
+} */
 
 @media (max-width: 968px) {
     .header {
@@ -411,7 +430,7 @@ li {
         width: 250px;
         border-radius: 20px;
         padding: 10px;
-        background-color: #b2a4a4;
+        background-color: #5d5d5d;
     }
 }
 
@@ -438,7 +457,8 @@ li {
     background-color: #ffffffbb;
     box-shadow: none;
     transition: all 0.3s linear;
-    border-radius: 30px;
+    border: 1px solid #0033ff;
+    border-radius: 20px;
 }
 
 .wrap_clubs {
@@ -901,13 +921,6 @@ li {
     height: 70px;
 }
 
-/* .worlds_run {
-    color: #000;
-    background: linear-gradient(90deg,red, blue, red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
-
 
 
 
@@ -935,7 +948,7 @@ li {
 .scorpion_Bac {
     height: 100%;
     width: 100%;
-    background: url('../img/scorpionBac.jpg') no-repeat;
+    /* background: url('../img/scorpionBac.jpg') no-repeat; */
     background-size: cover;
     position: fixed;
     /* background-attachment: fixed; */
@@ -943,36 +956,6 @@ li {
     pointer-events: none;
 }
 
-
-/* 
-.scorpion_Bac {
-    pointer-events: none;
-    height: 100%;
-    width: 100%;
-    object-position: 0 -200px;
-    object-fit: cover;
-    display: none;
-    position: fixed;
-    z-index: -3;
-}
-
-@media (max-width:650px) {
-    .scorpion_Bac {
-        object-position: 0 -100px;
-    }
-}
-
-@media (max-width:570px) {
-    .scorpion_Bac {
-        object-position: 0 30px;
-    }
-}
-
-@media (max-width:450px) {
-    .scorpion_Bac {
-        object-position: 0 80px;
-    }
-} */
 
 .students_title {
     text-align: center;
@@ -1100,9 +1083,19 @@ li {
 }
 
 .competitions_plase {
+    text-decoration: none;
+    color: #000;
     padding: 5px;
     font-size: 35px;
     margin: 0 auto;
+}
+
+.point {
+    user-select: none;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .result_plase {
@@ -1171,13 +1164,6 @@ li {
     /* object-position: 0 -40px; */
 }
 
-/* .img_max_win {
-    object-position: -50px 0;
-}
-
-.img_edo_win {
-    object-position: -8px 0;
-} */
 
 .name_sportsmen {
     white-space: nowrap;
@@ -1185,6 +1171,10 @@ li {
     margin: 0;
     padding-top: 5px;
     font-size: 22px;
+}
+
+.Artem_judge {
+    white-space: wrap;
 }
 
 .medals910_wrapp {
@@ -1204,7 +1194,7 @@ li {
 
 
 .kata_bac {
-    opacity: 0.4;
+    opacity: 0.28;
     position: fixed;
     z-index: -2;
     width: 100%;
@@ -1222,15 +1212,15 @@ li {
 }
 
 .main_program {
-    margin: 0 20px;
+    /* margin: 0 20px; */
     margin-top: 180px;
 }
 
 .wrrap_programe {
     max-width: 2000px;
     background-color: #0063ffcf;
-    border-radius: 20px;
-    margin: 20px auto;
+    /* border-radius: 20px; */
+    margin: 0 auto;
     padding-bottom: 40px;
 }
 
@@ -1247,44 +1237,54 @@ li {
     width: 100%;
     row-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-rows: repeat(5, 80px);
 }
 
 .program_item:last-child {
     grid-column: span 2;
-    width: 25%;
+    /* width: 25%; */
     height: 100%;
     margin: auto;
 }
 
 .program_item {
-    border-radius: 10px;
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
     background-color: #00000000;
-    transition: all 0.5s linear;
+    transition: all 0.4s linear;
+    /* cursor: pointer; */
 }
-.program_item:hover {
-    cursor: pointer;
-    scale: 1.1;
-    transition: all 0.5s linear;
-    background-color: #0099ffbe;
 
+.program_num::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: 4px;
+    background-color: #ff9500;
+    border-radius: 20px;
+    transition: all 0.4s linear;
+    scale: 0;
 }
-.program_item:active {
-    cursor: pointer;
-    scale: 1.1;
-    transition: all 0.5s linear;
-    background-color: #0099ffbe;
 
+.program_item:hover .program_num::after {
+    transition: all 0.4s linear;
+    width: 100%;
+    scale: 1;
+}
+.program_item:active .program_num::after {
+    transition: all 0.4s linear;
+    width: 100%;
+    scale: 1;
 }
 
 .program_num {
-    width: 90%;
+    position: relative;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1293,9 +1293,6 @@ li {
     color: #fff;
     text-decoration: none;
 }
-
-
-
 
 .progtam_wrap_text {
     display: flex;
@@ -1309,9 +1306,6 @@ li {
 .program_tipe {
     font-weight: 600;
 }
-
-/* .wrrap_programe */
-
 
 
 @media (max-width:1310px) {
@@ -1433,6 +1427,10 @@ li {
         background-color: #808080be;
     }
 
+    .competitions_plase {
+        color: #fff;
+    }
+
     .sportsmens_kards {
         background-color: #ffffffc7;
     }
@@ -1519,5 +1517,17 @@ li {
 @media (min-width:1350px) {
     .name_sportsmen {
         font-size: 30px;
+    }
+}
+
+
+@media (max-width:405px) {
+    .Artem_judge {
+        font-size: 10px;
+    }
+}
+@media (max-width:350px) {
+    .Artem_judge {
+        font-size: 9px;
     }
 }
